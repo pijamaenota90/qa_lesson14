@@ -8,14 +8,14 @@ from pages.article_page import ArticlePage
 class TestWikipedia:
 
     @allure.title("Проверка открытия сайта с приветствием")
-    def test_open_and_check_welcome(self):
+    def test_open_and_check_welcome(self, browser_setup):
         main_page = MainPage()
 
         main_page.open_site()
         main_page.check_welcome_text('Добро пожаловать в Википедию')
 
     @allure.title("Проверка поиска пустой строки")
-    def test_search_empty(self):
+    def test_search_empty(self, browser_setup):
         main_page = MainPage()
 
         main_page.open_site()
@@ -25,7 +25,7 @@ class TestWikipedia:
 
 
     @allure.title("Проверка поиска статьи про Москву")
-    def test_search_moscow(self):
+    def test_search_moscow(self, browser_setup):
         main_page = MainPage()
         article_page = ArticlePage()
 
@@ -36,7 +36,7 @@ class TestWikipedia:
         article_page.check_content_exists()
 
     @allure.title("Проверка переключения на Английскую версию")
-    def test_switch_to_english(self):
+    def test_switch_to_english(self, browser_setup):
         main_page = MainPage()
 
         main_page.open_site()
@@ -45,7 +45,7 @@ class TestWikipedia:
         main_page.check_welcome_text('Welcome to Wikipedia')
 
     @allure.title("Проверка, что пользователь не авторизован")
-    def test_user_not_logged_in(self):
+    def test_user_not_logged_in(self, browser_setup):
         main_page = MainPage()
 
         main_page.open_site()
