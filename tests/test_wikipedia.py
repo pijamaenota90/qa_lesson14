@@ -8,7 +8,7 @@ from pages.article_page import ArticlePage
 class TestWikipedia:
 
     @allure.title("Проверка открытия сайта с приветствием")
-    def test_open_and_check_welcome(self, browser_setup):
+    def test_open_and_check_welcome(self):
         main_page = MainPage()
 
         main_page.open_site()
